@@ -1,9 +1,11 @@
 package edu.hbuas.campustodo.service;
 
+import edu.hbuas.campustodo.model.Priority;
 import edu.hbuas.campustodo.model.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 任务应用服务。学生将在功能分支中逐步扩展该类。
@@ -20,5 +22,14 @@ public class TaskService {
 
     public List<Task> listAll() {
         return List.copyOf(tasks);
+    }
+
+    public List<Task> filterByPriority(Priority priority) {
+        if (priority == null) {
+            throw new IllegalArgumentException("优先级不能为空");
+        }
+        return tasks.stream()
+                .filter(task -> task.getPriority() == priority)
+                .collect(Collectors.toList());
     }
 }

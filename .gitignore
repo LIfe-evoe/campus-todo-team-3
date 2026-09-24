@@ -1,0 +1,17 @@
+# Maven
+target/
+*.class
+
+# IntelliJ IDEA
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 凭据与隐私
+*.pem
+*.key
+.env

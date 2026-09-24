@@ -1,17 +1,7 @@
-# Maven
 target/
-*.class
-
-# IntelliJ IDEA
 .idea/
 *.iml
-.vscode/
-
-# OS
+out/
 .DS_Store
-Thumbs.db
-
-# 凭据与隐私
-*.pem
-*.key
+*.log
 .env

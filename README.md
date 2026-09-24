@@ -28,6 +28,8 @@ CampusTodo 是《软件工程》课程中用于练习 Git 与 GitHub 团队协�
 
 ```bash
 mvn test
+# 完整校验（构建+单元测试）
+mvn verify
 ```
 
 初始版本应有 2 个测试通过。

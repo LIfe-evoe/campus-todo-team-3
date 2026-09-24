@@ -9,6 +9,7 @@ public class Task {
     private final long id;
     private final String title;
     private boolean completed;
+    private Priority priority = Priority.MEDIUM;
 
     public Task(long id, String title) {
         if (id <= 0) {
@@ -35,6 +36,17 @@ public class Task {
 
     public void complete() {
         completed = true;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Priority priority) {
+        if (priority == null) {
+            throw new IllegalArgumentException("优先级不能为空");
+        }
+        this.priority = priority;
     }
 
     @Override

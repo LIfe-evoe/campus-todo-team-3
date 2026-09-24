@@ -1,8 +1,6 @@
 package edu.hbuas.campustodo.model;
 
-/**
- * 待办任务：包含 id、标题与完成状态。
- */
+/** 一条待办任务，有 id、标题和完成状态。 */
 public class Task {
 
     private final long id;

@@ -7,9 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * TaskService 基线测试：新增任务与空标题校验。
- */
+/** 基线测试：新增任务和空标题校验。 */
 class TaskServiceTest {
 
     @Test

@@ -67,4 +67,31 @@ class TaskServiceTest {
 
         assertTrue(result.isEmpty());
     }
+    @Test
+    void shouldCompleteTaskById() {
+        TaskService service = new TaskService();
+        Task task = service.addTask("写实验报告");
+
+        service.completeTask(task.getId());
+
+        assertTrue(task.isCompleted());
+    }
+
+    @Test
+    void shouldRejectCompletingNonExistentTask() {
+        TaskService service = new TaskService();
+
+        assertThrows(IllegalArgumentException.class,
+            () -> service.completeTask(999L));
+    }
+
+    @Test
+    void shouldRejectCompletingAlreadyCompletedTask() {
+        TaskService service = new TaskService();
+        Task task = service.addTask("重复完成测试");
+        service.completeTask(task.getId());
+
+        assertThrows(IllegalStateException.class,
+            () -> service.completeTask(task.getId()));
+    }
 }

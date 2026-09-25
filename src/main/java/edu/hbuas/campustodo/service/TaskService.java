@@ -32,16 +32,4 @@ public class TaskService {
                 .filter(task -> task.getPriority() == priority)
                 .collect(Collectors.toList());
     }
-    public void completeTask(long id) {
-        Task target = tasks.stream()
-            .filter(t -> t.getId() == id)
-            .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException("任务编号不存在：" + id));
-
-        if (target.isCompleted()) {
-            throw new IllegalStateException("任务已完成，不能重复完成：" + id);
-        }
-
-        target.complete();
-    }
 }

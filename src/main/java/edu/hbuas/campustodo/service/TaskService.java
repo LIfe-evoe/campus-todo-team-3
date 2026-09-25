@@ -32,6 +32,9 @@ public class TaskService {
                 .filter(task -> task.getPriority() == priority)
                 .collect(Collectors.toList());
     }
+    /**
+     * 按编号完成任务。
+     */
     public void completeTask(long id) {
         Task target = tasks.stream()
             .filter(t -> t.getId() == id)
